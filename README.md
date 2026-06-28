@@ -15,7 +15,17 @@ Kurowane i weryfikowane przez [Cyfrowy Ogarniacz](https://cyfrowyogarniacz.pl).
 | [status](skills/status/) | Command | Szybki raport stanu projektu | Darmowy |
 | [writing-style](skills/writing-style/) | Skill | Eliminuje sztuczny styl AI z każdego tekstu | Darmowy |
 | [reddit](skills/reddit/) | Skill | Szukaj i analizuj dyskusje na Reddit (zero API key) | Darmowy |
+| [academic](skills/academic/) | Skill | Wyszukiwanie publikacji naukowych — OpenAlex 250M+, bez API key | Darmowy |
+| [firecrawl](skills/firecrawl/) | Skill | Scraping i research stron WWW (JS, PDF, crawl) | Darmowy |
+| [supadata](skills/supadata/) | Skill | Transkrypty video i social — YouTube, TikTok, IG, X, FB | Darmowy |
+| [diagram](skills/diagram/) | Skill | Diagramy architektury w D2 → PNG | Darmowy |
+| [excalidraw](skills/excalidraw/) | Skill | Diagramy architektury z analizy codebase (.excalidraw) | Darmowy |
+| [notion-page-builder](skills/notion-page-builder/) | Skill | Budowanie pięknych stron Notion (Notion MCP) | Darmowy |
 | [brainstorm](skills/brainstorm/) | Command | Strategiczna eksploracja pomysłów | Premium |
+| [deep-research](skills/deep-research/) | Command | Multi-agentowy research na wielu platformach naraz | Premium |
+| [ui-ux-pro-max](skills/ui-ux-pro-max/) | Skill | Inteligencja projektowa UI/UX — style, palety, fonty | Premium |
+| [frontend-design](skills/frontend-design/) | Skill | Produkcyjny frontend bez generycznego „AI slop" | Premium |
+| [new-capability](skills/new-capability/) | Command | Fabryka własnych integracji API | Premium |
 
 ---
 
