@@ -1,0 +1,5 @@
+# Python dependencies for the runnable skill clients in this repo.
+# - skills/academic/scripts/academic/client.py  (requests, python-dotenv)
+# - skills/supadata/scripts/utils/supadata.py    (requests)
+requests>=2.31.0
+python-dotenv>=1.0.0
