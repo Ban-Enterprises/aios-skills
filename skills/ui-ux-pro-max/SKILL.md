@@ -6,11 +6,17 @@ description: >
   SwiftUI, Flutter, Tailwind, shadcn/ui). Plan, build, design, review, improve UI/UX.
   Style: glassmorphism, brutalism, minimalism, bento, dark mode. Palette, typografia,
   dostępność, animacje, layout, spacing.
+  W tym repo: opis i routing. Pełna baza decyzji poza katalogiem (AIOS Community).
+  NIE do produkcji całego frontu — skill frontend-design.
 type: skill
-install: .claude/skills/ui-ux-pro-max/SKILL.md
 pricing: premium
-verified: true
+completeness: stub
+verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/skills/ui-ux-pro-max/SKILL.md
+  cursor: .cursor/skills/ui-ux-pro-max/SKILL.md
 ---
 
 # UI/UX Pro Max — Design Intelligence
@@ -28,6 +34,11 @@ aios: true
 
 Gdy projektujesz lub poprawiasz interfejs: landing page, dashboard, panel admin,
 e-commerce, SaaS, aplikacja mobilna; dobór kolorów, fontów, animacji, dostępności.
+
+## Kiedy nie
+
+- W tym repo nie ma bazy 67 stylów / 96 palet. Nie zmyślaj katalogu.
+- Produkcja działającego frontu — skill `frontend-design`.
 
 ## Priorytety (skrót)
 

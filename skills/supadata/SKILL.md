@@ -2,19 +2,29 @@
 name: supadata
 description: >
   Transkrypty video i social z dowolnego URL — YouTube, TikTok, Instagram, X, Facebook.
-  Pull a transcript, get captions, YouTube search (keyword/competitor research),
-  web scraping (page → markdown, crawl site), metadane social (views, likes, engagement),
-  dane kanałów i playlist. Transcript, transcription, video captions, YouTube search.
+  Metadane social, kanały i playlisty YouTube. Transcript, captions, YouTube search.
+  NIE do scrapingu WWW/docs/PDF — skill firecrawl (web_* w tym API to zapas, nie default).
+  NIE do Reddit — skill reddit. NIE do papers — skill academic.
 type: skill
-install: .claude/skills/supadata/SKILL.md
 pricing: free
+completeness: full
 verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/skills/supadata/SKILL.md
+  cursor: .cursor/skills/supadata/SKILL.md
 ---
 
 # Supadata API
 
-API do ekstrakcji treści z YouTube, social mediów i stron WWW. 21 endpointów, rozliczenie kredytowe. Wymaga konta Supadata i klucza API.
+API do ekstrakcji treści z YouTube, social mediów i (zapasowo) stron WWW. 21 endpointów, rozliczenie kredytowe. Wymaga konta Supadata i klucza API.
+
+## Kiedy nie
+
+- Domyślny scrape WWW, docs, PDF, JS/SPA, crawl dokumentacji — skill `firecrawl`.
+- Metody `web_scrape` / `web_map` / `web_crawl` zostaw, gdy Firecrawl jest niedostępny albo już jesteś na kredytach Supadata.
+- Reddit — skill `reddit`. Papers — skill `academic`.
 
 ## Setup
 

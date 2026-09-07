@@ -1,16 +1,13 @@
 """
-Supadata API client for the Morningside workspace.
+Supadata API client for aios-skills.
 
-Centralizes all Supadata API calls. Import this instead of writing raw HTTP requests.
-Full service reference: reference/services/supadata.md
+Centralizes Supadata REST calls. Import this instead of writing raw HTTP.
 
 Usage:
-    from utils.supadata import SupadataClient
+    from scripts.utils.supadata import SupadataClient
 
-    client = SupadataClient()  # reads SUPADATA_API_KEY from .env
+    client = SupadataClient()  # reads SUPADATA_API_KEY from env / .env
     transcript = client.transcript("https://youtube.com/watch?v=VIDEO_ID", text=True)
-    metadata = client.metadata("https://youtube.com/watch?v=VIDEO_ID")
-    page = client.web_scrape("https://example.com")
 """
 
 from __future__ import annotations

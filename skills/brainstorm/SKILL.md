@@ -4,11 +4,17 @@ description: >
   Strategiczna eksploracja pomysłów w kontekście Twojego biznesu.
   4-etapowy interaktywny brainstorm: Frame, Explore, Options, Output.
   Brainstorm, strategia, pomysły, kierunek, eksploracja.
+  W tym repo: opis i routing. Pełny 4-etapowy dialog poza katalogiem (AIOS Community).
+  NIE do researchu źródeł — skille firecrawl/reddit/academic/supadata.
 type: command
-install: .claude/commands/brainstorm.md
 pricing: premium
-verified: true
+completeness: stub
+verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/commands/brainstorm.md
+  cursor: .cursor/skills/brainstorm/SKILL.md
 ---
 
 # Brainstorm
@@ -36,6 +42,11 @@ Interaktywny — Claude prezentuje wyniki po każdym etapie i czeka na Twój inp
 ```
 
 Claude przeczyta kontekst Twojego biznesu, przeanalizuje obie opcje, porówna z Twoją obecną strategią, i zaproponuje kierunek z uzasadnieniem.
+
+## Kiedy nie
+
+- W tym repo to stub. Nie odtwarzaj z głowy pełnego 4-etapowego protokołu Community.
+- Research faktów i źródeł — skille `firecrawl` / `reddit` / `academic` / `supadata`.
 
 ---
 

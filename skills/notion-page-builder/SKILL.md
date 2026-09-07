@@ -3,12 +3,17 @@ name: notion-page-builder
 description: >
   Budowanie pięknych stron Notion z bogatym formatowaniem, kolorami, kolumnami,
   calloutami i bazami danych. Notion page, strona Notion, lead magnet, baza wiedzy,
-  dashboard, landing page w Notion. Wymaga Notion MCP.
+  dashboard, landing page w Notion. Wymaga Notion MCP na hoście.
+  NIE do HTML/React/landingów poza Notion — skill frontend-design.
 type: skill
-install: .claude/skills/notion-page-builder/SKILL.md
 pricing: free
+completeness: full
 verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/skills/notion-page-builder/SKILL.md
+  cursor: .cursor/skills/notion-page-builder/SKILL.md
 ---
 
 # Notion Page Builder — Skill do tworzenia pięknych stron Notion
@@ -19,6 +24,11 @@ aios: true
 - "zbuduj stronę Notion", "stwórz stronę w Notion", "notion page"
 - "lead magnet w Notion", "baza wiedzy Notion"
 - "dashboard Notion", "landing page Notion"
+
+## Kiedy nie
+
+- HTML/React/landing poza Notion — skill `frontend-design`.
+- Ten skill wymaga działającego Notion MCP na hoście. Brak MCP = przerwij i powiedz, że adaptera nie ma; nie udawaj zapisu do Notion.
 
 ## Workflow
 

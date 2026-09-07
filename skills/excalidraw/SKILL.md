@@ -4,16 +4,26 @@ description: >
   Generowanie diagramów architektury jako pliki .excalidraw z analizy codebase,
   z opcjonalnym eksportem do PNG/SVG. Architecture diagrams, system diagrams,
   visualize codebase, generate excalidraw files, export to PNG/SVG.
+  NIE do diagramów jako kod D2/PNG — skill diagram.
 type: skill
-install: .claude/skills/excalidraw/SKILL.md
 pricing: free
+completeness: full
 verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/skills/excalidraw/SKILL.md
+  cursor: .cursor/skills/excalidraw/SKILL.md
 ---
 
 # Excalidraw Diagram Generator
 
 Generate architecture diagrams as `.excalidraw` files directly from codebase analysis, with optional export to PNG and SVG.
+
+## Kiedy nie
+
+- Diagram as code (D2) i powtarzalny PNG w CI — skill `diagram`.
+- Ten skill jest do pliku `.excalidraw` (i opcjonalnego eksportu), nie do składni D2.
 
 ---
 
@@ -26,7 +36,7 @@ Generate architecture diagrams as `.excalidraw` files directly from codebase ana
 "Visualize this codebase as an excalidraw file"
 ```
 
-**Claude Code will:**
+**Agent will:**
 1. Analyze the codebase (any language/framework)
 2. Identify components, services, databases, APIs
 3. Map relationships and data flows
