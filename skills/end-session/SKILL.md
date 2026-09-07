@@ -1,14 +1,19 @@
 ---
 name: end-session
 description: >
-  Zapisuje stan sesji pracy na koniec rozmowy z Claude.
+  Zapisuje stan sesji pracy na koniec rozmowy.
   Tworzy SESSION-STATE.md z podsumowaniem co zrobiono, co w trakcie, co dalej.
   Buduje ciągłość między sesjami. End session, zakończ sesję, koniec pracy.
+  NIE do odczytu statusu — skill status.
 type: command
-install: .claude/commands/end-session.md
 pricing: free
+completeness: full
 verified: true
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/commands/end-session.md
+  cursor: .cursor/skills/end-session/SKILL.md
 ---
 
 # End Session
@@ -17,11 +22,10 @@ aios: true
 
 ## Instalacja
 
-Skopiuj sekcję **"Komenda"** poniżej do pliku `.claude/commands/end-session.md` w swoim projekcie.
+- Claude Code: `.claude/commands/end-session.md` — `/end-session`
+- Cursor: `.cursor/skills/end-session/SKILL.md`
 
-Jeśli folder `.claude/commands/` nie istnieje — utwórz go.
-
-Po instalacji wywołuj komendę wpisując `/end-session` w czacie z Claude.
+Albo `./scripts/install-skills.sh`.
 
 ---
 
@@ -77,7 +81,7 @@ Wypisz:
 
 ## Dlaczego to ważne
 
-Bez tego Claude traktuje każdą rozmowę jako zupełnie nową. Nie wie co robiliście wczoraj, co jest w trakcie, jakie były decyzje. Z `/end-session` budujesz ciągłość — każda sesja jest kontynuacją poprzedniej.
+Bez tego agent traktuje każdą rozmowę jako zupełnie nową. Nie wie co robiliście wczoraj, co jest w trakcie, jakie były decyzje. Z end-session budujesz ciągłość — każda sesja jest kontynuacją poprzedniej.
 
 ---
 

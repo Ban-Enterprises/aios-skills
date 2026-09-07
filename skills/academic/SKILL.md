@@ -4,16 +4,28 @@ description: >
   Wyszukiwanie publikacji naukowych przez OpenAlex (250M+ prac), bez API key.
   Artykuły naukowe, abstrakty, grafy cytowań, darmowe PDFy zza paywalla.
   Academic research, scientific papers, literature review, citations, scholarly search.
+  NIE do news/blogów/docs WWW — skill firecrawl. NIE do transkryptów — skill supadata.
 type: skill
-install: .claude/skills/academic/SKILL.md
 pricing: free
+completeness: full
 verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/skills/academic/SKILL.md
+  cursor: .cursor/skills/academic/SKILL.md
 ---
 
 # Academic Paper Search
 
 Wyszukiwanie w 250M+ prac naukowych przez OpenAlex. **Zero autoryzacji** — bez klucza API. Dodatkowo Unpaywall (darmowe PDFy publikacji zza paywalla) i przeglądanie grafu cytowań.
+
+## Kiedy nie
+
+- News, blogi, dokumentacja produktów, dowolne WWW — skill `firecrawl`.
+- Transkrypty i social video — skill `supadata`.
+- Wątki Reddit — skill `reddit`.
+- `extract_full_text=True` w `research()` woła Firecrawl na stronie wydawcy; to zapas, nie zamiennik skilla `firecrawl`.
 
 ## Setup
 
@@ -24,7 +36,7 @@ from scripts.academic.client import AcademicClient
 client = AcademicClient()
 ```
 
-**Bez zmiennych środowiskowych.** OpenAlex i Unpaywall są darmowe i bez autoryzacji. Dla "polite pool" ustaw swój e-mail w `client.py` (stała `EMAIL`).
+**Bez klucza API.** OpenAlex i Unpaywall są darmowe. Dla polite pool ustaw `OPENALEX_MAILTO` (albo `MAILTO`) w środowisku — client wstawia to w User-Agent.
 
 ## Method Reference
 

@@ -4,16 +4,26 @@ description: >
   Diagramy architektury w D2, renderowane do PNG. System diagrams, architecture diagrams,
   data flow, flowcharts, process diagrams, visual maps. Render diagrams to PNG,
   konwencje diagramów, schemat kolorów.
+  NIE do plików .excalidraw z analizy repo — skill excalidraw.
 type: skill
-install: .claude/skills/diagram/SKILL.md
 pricing: free
+completeness: full
 verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/skills/diagram/SKILL.md
+  cursor: .cursor/skills/diagram/SKILL.md
 ---
 
 # D2 Diagrams
 
 Diagramy architektury pisane w D2, renderowane do PNG.
+
+## Kiedy nie
+
+- Plik `.excalidraw` z analizy codebase — skill `excalidraw`.
+- D2 jest źródłem prawdy (diagram as code). PNG jest artefaktem renderu.
 
 ## Quick Start
 
@@ -22,8 +32,8 @@ Diagramy architektury pisane w D2, renderowane do PNG.
 3. Validate: Read the PNG (Claude multimodal vision)
 4. Iterate if needed
 
-**Install:** `brew install d2`
-**Render command:** `d2 --layout elk --theme 0 --pad 40 input.d2 output.png`
+**Install D2:** `brew install d2` (macOS) albo [release z GitHub](https://github.com/terrastruct/d2/releases) (Linux/Windows).
+**Render:** `d2 --layout elk --theme 0 --pad 40 input.d2 output.png`
 
 ## Creating Your First Diagram
 

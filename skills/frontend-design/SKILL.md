@@ -5,11 +5,17 @@ description: >
   estetyki "AI slop". Biblioteka 9 kurowanych przykładów design (w tym wielostronicowy
   SaaS) do mieszania i adaptacji pod dowolną markę. Design, build, style, beautify, UI,
   frontend, landing page, dashboard, website, komponent, mockup, prototype.
+  W tym repo: opis i routing. Biblioteka 9 przykładów poza katalogiem (AIOS Community).
+  NIE do samego doboru palety/fontów bez kodu — skill ui-ux-pro-max.
 type: skill
-install: .claude/skills/frontend-design/SKILL.md
 pricing: premium
-verified: true
+completeness: stub
+verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/skills/frontend-design/SKILL.md
+  cursor: .cursor/skills/frontend-design/SKILL.md
 ---
 
 # Frontend Design
@@ -27,6 +33,11 @@ aios: true
 
 Gdy budujesz lub stylujesz cokolwiek webowego: strona, landing, dashboard, komponent
 React/Vue/Svelte, HTML/CSS, mockup, prototyp.
+
+## Kiedy nie
+
+- W tym repo nie ma biblioteki `examples/`. Nie udawaj, że przeczytałeś 9 kurowanych źródeł.
+- Sam dobór palety, fontu, a11y bez implementacji — skill `ui-ux-pro-max`.
 
 ## Jak działa (skrót)
 

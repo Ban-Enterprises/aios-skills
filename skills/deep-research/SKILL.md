@@ -5,11 +5,17 @@ description: >
   3+ poziomy w głąb tematu, oceniają wiarygodność źródeł, triangulują twierdzenia
   i zwracają zsyntetyzowany, cytowany raport. Deep research, zbadaj temat, dive deep,
   intelligence gathering, kto jest ekspertem od, co się dzieje w, multi-platform research.
+  W tym repo: opis i routing. Pełna orkiestracja poza katalogiem (AIOS Community).
+  NIE zastępuje firecrawl/reddit/academic/supadata — wołaj je osobno, gdy stub nie wystarcza.
 type: command
-install: .claude/commands/deep-research.md
 pricing: premium
-verified: true
+completeness: stub
+verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/commands/deep-research.md
+  cursor: .cursor/skills/deep-research/SKILL.md
 ---
 
 # Deep Research
@@ -27,6 +33,11 @@ aios: true
 
 Dla każdego, kto potrzebuje rzetelnego, wielo-źródłowego researchu zamiast jednego
 przejścia po Google — analiza rynku, due diligence, mapowanie ekspertów, przegląd tematu.
+
+## Kiedy nie
+
+- W tym repo nie ma orkiestracji. Nie wymyślaj 3+ poziomów agentów.
+- Pojedynczy kanał: wołaj `firecrawl`, `reddit`, `academic` albo `supadata` wprost.
 
 ## Jak wygląda przepływ
 

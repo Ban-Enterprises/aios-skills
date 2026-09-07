@@ -1,14 +1,19 @@
 ---
 name: prime
 description: >
-  Inicjalizacja sesji. Claude czyta kontekst projektu, podsumowuje stan,
+  Inicjalizacja sesji. Agent czyta kontekst projektu, podsumowuje stan,
   potwierdza gotowość do pracy. Uruchom na start każdej sesji.
   Prime, start sesji, inicjalizacja, orientacja.
+  NIE do szybkiego statusu w trakcie dnia — skill status.
 type: command
-install: .claude/commands/prime.md
 pricing: free
+completeness: full
 verified: true
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/commands/prime.md
+  cursor: .cursor/skills/prime/SKILL.md
 ---
 
 # Prime
@@ -17,9 +22,14 @@ aios: true
 
 ## Instalacja
 
-Skopiuj sekcję **"Komenda"** poniżej do pliku `.claude/commands/prime.md` w swoim projekcie.
+Skopiuj ten plik:
 
-Po instalacji wywołuj komendą `/prime` na start każdej sesji.
+- Claude Code: `.claude/commands/prime.md` — wywołuj `/prime`
+- Cursor: `.cursor/skills/prime/SKILL.md` — na start sesji napisz „prime” albo @ skill
+
+Albo: `./scripts/install-skills.sh --host both --target /ścieżka/projektu`
+
+Po instalacji uruchamiaj na start każdej sesji.
 
 ---
 
@@ -28,7 +38,7 @@ Po instalacji wywołuj komendą `/prime` na start każdej sesji.
 ```markdown
 Zainicjalizuj tę sesję z kontekstem projektu. Przeczytaj pliki w tej kolejności:
 
-1. `CLAUDE.md` — struktura workspace, komendy, skille (jeśli istnieje)
+1. `AGENTS.md` albo `CLAUDE.md` — struktura workspace, komendy, skille (pierwszy który istnieje)
 2. `SESSION-STATE.md` — co było ostatnio (jeśli istnieje)
 3. `CHANGELOG.md` — ostatnie zmiany (jeśli istnieje)
 4. `README.md` — opis projektu (jeśli powyższe nie istnieją)
@@ -59,7 +69,7 @@ Bądź zwięzły. Chodzi o orientację, nie raport.
 
 ## Dlaczego to ważne
 
-Każda sesja z Claude zaczyna się od zera — nie wie co robiliście wcześniej. `/prime` daje mu orientację w 10 sekund zamiast 5 minut tłumaczenia.
+Każda sesja z agentem zaczyna się od zera — nie wie co robiliście wcześniej. Prime daje orientację w kilkanaście sekund zamiast tłumaczenia od nowa.
 
 ## Para idealna
 

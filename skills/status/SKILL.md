@@ -3,11 +3,16 @@ name: status
 description: >
   Szybki status projektu. Czyta minimum plików, daje maksimum informacji.
   Priorytety, ostatnia sesja, następne kroki. Status, stan projektu, raport.
+  NIE do pełnego bootstrapu sesji — skill prime. NIE do zapisu stanu — skill end-session.
 type: command
-install: .claude/commands/status.md
 pricing: free
+completeness: full
 verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/commands/status.md
+  cursor: .cursor/skills/status/SKILL.md
 ---
 
 # Status
@@ -16,9 +21,10 @@ aios: true
 
 ## Instalacja
 
-Skopiuj sekcję **"Komenda"** poniżej do pliku `.claude/commands/status.md` w swoim projekcie.
+- Claude Code: `.claude/commands/status.md` — `/status`
+- Cursor: `.cursor/skills/status/SKILL.md`
 
-Po instalacji wywołuj komendą `/status` w dowolnym momencie.
+Albo `./scripts/install-skills.sh`.
 
 ---
 
@@ -32,7 +38,7 @@ Pokaż szybki status projektu. Przeczytaj minimum plików, daj maksimum informac
 ### 1. Przeczytaj (tylko istniejące pliki)
 - `SESSION-STATE.md` — co było ostatnio
 - `CHANGELOG.md` — ostatnie zmiany (top 5 wpisów)
-- `CLAUDE.md` — priorytety (jeśli zawiera sekcję priorytetów)
+- `AGENTS.md` albo `CLAUDE.md` — priorytety (jeśli zawiera sekcję priorytetów)
 
 ### 2. Wypisz raport
 
@@ -55,7 +61,7 @@ Ten raport musi być szybki. Nie czytaj kodu, nie analizuj struktury. Czytaj tyl
 
 ## Co robi
 
-- Czyta 2-3 pliki kontekstowe (SESSION-STATE, CHANGELOG, CLAUDE.md)
+- Czyta 2-3 pliki kontekstowe (SESSION-STATE, CHANGELOG, AGENTS.md lub CLAUDE.md)
 - Wypisuje zwięzły raport stanu
 - Nie modyfikuje żadnych plików
 - Zajmuje 5-10 sekund

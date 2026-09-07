@@ -5,11 +5,17 @@ description: >
   research oficjalnej dokumentacji API, scoping operacji read/write, projekt architektury
   i wygenerowanie gotowego Context Skilla. New capability, dodaj integrację, połącz API,
   podłącz usługę, build capability, service integration, add API.
+  W tym repo: zasada anty-marketplace + opis. Pełny generator poza katalogiem (AIOS Community).
+  NIE instaluj MCP z marketplace jako substytutu tego skilla.
 type: command
-install: .claude/commands/new-capability.md
 pricing: premium
-verified: true
+completeness: stub
+verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/commands/new-capability.md
+  cursor: .cursor/skills/new-capability/SKILL.md
 ---
 
 # New Capability — Capability Factory
@@ -32,6 +38,11 @@ Sens tego skilla = capability w pełni zrozumiana, kontrolowana i dopasowana do 
 ## Kiedy użyć
 
 Gdy dodajesz nowe API, podłączasz usługę albo budujesz integrację z zewnętrznym narzędziem.
+
+## Kiedy nie
+
+- W tym repo nie ma generatora 7 etapów. Zostaw zasadę anty-marketplace: MCP z marketplace to adapter, nie skill.
+- Nie zastępuj tego skilla wklejeniem serwera z marketplace.
 
 ---
 

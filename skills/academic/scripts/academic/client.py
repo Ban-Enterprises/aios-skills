@@ -75,12 +75,17 @@ class AcademicClient:
 
     OPENALEX_BASE = "https://api.openalex.org"
     UNPAYWALL_BASE = "https://api.unpaywall.org/v2"
-    EMAIL = "your@email.com"  # Replace with your email for polite API access
 
-    def __init__(self):
+    def __init__(self, email: str | None = None):
+        self.email = (
+            email
+            or os.environ.get("OPENALEX_MAILTO")
+            or os.environ.get("MAILTO")
+            or "research@localhost"
+        )
         self.session = requests.Session()
         self.session.headers.update({
-            "User-Agent": f"AIOS-Research/1.0 (mailto:{self.EMAIL})",
+            "User-Agent": f"AIOS-Research/1.0 (mailto:{self.email})",
             "Accept": "application/json",
         })
 
@@ -272,7 +277,7 @@ class AcademicClient:
         try:
             resp = self.session.get(
                 f"{self.UNPAYWALL_BASE}/{clean_doi}",
-                params={"email": self.EMAIL},
+                params={"email": self.email},
                 timeout=10,
             )
             if resp.status_code != 200:

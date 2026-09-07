@@ -5,17 +5,28 @@ description: >
   Scrape URL, fetch page, read article, research online, search the web, crawl docs,
   extract data from site, PDF from URL, competitor research, browse, web research.
   Radzi sobie z JS/SPA, ochroną botów (Cloudflare), PDF/docx i crawlowaniem wielu stron.
-  NIE do transkryptów YouTube/TikTok/IG/X/FB — od tego jest skill supadata.
+  NIE do transkryptów YouTube/TikTok/IG/X/FB — skill supadata.
+  NIE do Reddit — skill reddit. NIE do papers/DOI — skill academic.
 type: skill
-install: .claude/skills/firecrawl/SKILL.md
 pricing: free
+completeness: full
 verified: false
 aios: true
+hosts: claude, cursor
+install:
+  claude: .claude/skills/firecrawl/SKILL.md
+  cursor: .cursor/skills/firecrawl/SKILL.md
 ---
 
 # Firecrawl
 
 CLI do scrapingu WWW — zamienia dowolny URL w czysty markdown gotowy dla LLM. 8 komend.
+
+## Kiedy nie
+
+- Transkrypty YouTube / TikTok / IG / X / FB — skill `supadata`.
+- Reddit — skill `reddit` (scrape reddit.com tu pada).
+- Papers, DOI, graf cytowań — skill `academic`.
 
 ## Setup
 
