@@ -1,11 +1,6 @@
 ---
 name: brainstorm
-description: >
-  Strategiczna eksploracja pomysłów w kontekście Twojego biznesu.
-  4-etapowy interaktywny brainstorm: Frame, Explore, Options, Output.
-  Brainstorm, strategia, pomysły, kierunek, eksploracja.
-  W tym repo: opis i routing. Pełny 4-etapowy dialog poza katalogiem (AIOS Community).
-  NIE do researchu źródeł — skille firecrawl/reddit/academic/supadata.
+description: "Strategiczna eksploracja pomysłów w kontekście Twojego biznesu. 4-etapowy interaktywny brainstorm: Frame, Explore, Options, Output. Brainstorm, strategia, pomysły, kierunek, eksploracja. W tym repo: opis i routing. Pełny 4-etapowy dialog poza katalogiem (AIOS Community). NIE do researchu źródeł — skille firecrawl/reddit/academic/supadata."
 license: MIT
 metadata:
   author: BAN ENTERPRISES
@@ -45,6 +40,8 @@ Claude przeczyta kontekst Twojego biznesu, przeanalizuje obie opcje, porówna z 
 
 ---
 
+
+
 ## Pełna wersja
 
 Ten skill jest częścią **AIOS Community** — ekosystemu narzędzi AI dla ludzi, którzy ogarniają swój biznes.
@@ -55,4 +52,4 @@ Dołącz do Cyfrowego Ogarniacza i otrzymaj dostęp do wszystkich premium skilli
 
 ---
 
-*Skill z [AIOS Skills](https://github.com/Ban-Enterprises/aios-skills) — [Cyfrowy Ogarniacz](https://cyfrowyogarniacz.pl)*
+*Skill z [AIOS Skills](https://github.com/Ban-Enterprises/aios-skills) — [Cyfrowy Ogarniacz](https://cyfrowyogarniacz.pl)
