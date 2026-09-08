@@ -52,4 +52,4 @@ Dołącz do Cyfrowego Ogarniacza i otrzymaj dostęp do wszystkich premium skilli
 
 ---
 
-*Skill z [AIOS Skills](https://github.com/Ban-Enterprises/aios-skills) — [Cyfrowy Ogarniacz*](https://cyfrowyogarniacz.pl)
+*Skill z [AIOS Skills](https://github.com/Ban-Enterprises/aios-skills) — [Cyfrowy Ogarniacz](https://cyfrowyogarniacz.pl)
