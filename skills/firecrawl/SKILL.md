@@ -7,15 +7,11 @@ description: >
   Radzi sobie z JS/SPA, ochroną botów (Cloudflare), PDF/docx i crawlowaniem wielu stron.
   NIE do transkryptów YouTube/TikTok/IG/X/FB — skill supadata.
   NIE do Reddit — skill reddit. NIE do papers/DOI — skill academic.
-type: skill
-pricing: free
-completeness: full
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/firecrawl/SKILL.md
-  cursor: .cursor/skills/firecrawl/SKILL.md
+license: MIT
+compatibility: Requires Node.js 22+, Firecrawl CLI, internet access, and Firecrawl authentication.
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Firecrawl

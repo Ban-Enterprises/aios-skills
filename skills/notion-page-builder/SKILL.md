@@ -5,15 +5,11 @@ description: >
   calloutami i bazami danych. Notion page, strona Notion, lead magnet, baza wiedzy,
   dashboard, landing page w Notion. Wymaga Notion MCP na hoście.
   NIE do HTML/React/landingów poza Notion — skill frontend-design.
-type: skill
-pricing: free
-completeness: full
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/notion-page-builder/SKILL.md
-  cursor: .cursor/skills/notion-page-builder/SKILL.md
+license: MIT
+compatibility: Requires a host with an authenticated Notion MCP connector.
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Notion Page Builder — Skill do tworzenia pięknych stron Notion

@@ -1,0 +1,152 @@
+schema_version: "1"
+catalog:
+  name: aios-skills
+  owner: BAN ENTERPRISES
+  license: MIT
+
+skills:
+  academic:
+    type: skill
+    category: research
+    pricing: free
+    completeness: full
+    verified: false
+    aios: true
+    aios_layer: intelligence
+  brainstorm:
+    type: command
+    category: strategy
+    pricing: premium
+    completeness: stub
+    verified: false
+    aios: true
+    aios_layer: context
+  deep-research:
+    type: command
+    category: research
+    pricing: premium
+    completeness: stub
+    verified: false
+    aios: true
+    aios_layer: intelligence
+  diagram:
+    type: skill
+    category: visual
+    pricing: free
+    completeness: full
+    verified: false
+    aios: true
+    aios_layer: build
+  end-session:
+    type: command
+    category: session
+    pricing: free
+    completeness: full
+    verified: true
+    aios: true
+    aios_layer: context
+  excalidraw:
+    type: skill
+    category: visual
+    pricing: free
+    completeness: full
+    verified: false
+    aios: true
+    aios_layer: build
+  firecrawl:
+    type: skill
+    category: research
+    pricing: free
+    completeness: full
+    verified: false
+    aios: true
+    aios_layer: intelligence
+  frontend-design:
+    type: skill
+    category: design
+    pricing: premium
+    completeness: stub
+    verified: false
+    aios: true
+    aios_layer: build
+  new-capability:
+    type: command
+    category: integration
+    pricing: premium
+    completeness: stub
+    verified: false
+    aios: true
+    aios_layer: automate
+  notion-page-builder:
+    type: skill
+    category: productivity
+    pricing: free
+    completeness: full
+    verified: false
+    aios: true
+    aios_layer: build
+  prime:
+    type: command
+    category: session
+    pricing: free
+    completeness: full
+    verified: true
+    aios: true
+    aios_layer: context
+  reddit:
+    type: skill
+    category: research
+    pricing: free
+    completeness: full
+    verified: true
+    aios: false
+    aios_layer: intelligence
+  status:
+    type: command
+    category: session
+    pricing: free
+    completeness: full
+    verified: false
+    aios: true
+    aios_layer: context
+  supadata:
+    type: skill
+    category: research
+    pricing: free
+    completeness: full
+    verified: false
+    aios: true
+    aios_layer: intelligence
+  ui-ux-pro-max:
+    type: skill
+    category: design
+    pricing: premium
+    completeness: stub
+    verified: false
+    aios: true
+    aios_layer: build
+  writing-style:
+    type: skill
+    category: policy
+    pricing: free
+    completeness: full
+    verified: true
+    aios: false
+    aios_layer: context
+
+install_targets:
+  portable:
+    skill: .agents/skills/{name}/SKILL.md
+    command: .agents/skills/{name}/SKILL.md
+  claude:
+    skill: .claude/skills/{name}/SKILL.md
+    command: .claude/commands/{name}.md
+  cursor:
+    skill: .cursor/skills/{name}/SKILL.md
+    command: .cursor/skills/{name}/SKILL.md
+  codex:
+    skill: .codex/skills/{name}/SKILL.md
+    command: .codex/skills/{name}/SKILL.md
+  grok:
+    skill: .grok/skills/{name}/SKILL.md
+    command: .grok/skills/{name}/SKILL.md

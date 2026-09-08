@@ -1,17 +1,13 @@
 ---
 name: example
 description: >
-  Jedno zdanie co robi. Triggery (słowa użytkownika).
-  NIE do X — od tego jest skill Y.
-type: skill
-pricing: free
-completeness: full
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/example/SKILL.md
-  cursor: .cursor/skills/example/SKILL.md
+  Co robi i kiedy użyć (konkretne frazy/intencje użytkownika).
+  Jeśli istnieje konflikt: NIE do X — od tego jest skill Y.
+license: MIT
+compatibility: Requires X. Usuń to pole, gdy skill nie ma specjalnych wymagań.
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Tytuł
@@ -24,11 +20,23 @@ Jedno zdanie celu.
 
 ## Setup
 
-Adapter: CLI / env / skrypt. Brak twardej ścieżki jednego hosta.
+Wymagane wejścia, dostęp, CLI/env/skrypt. Bez instrukcji instalacji do konkretnego hosta.
 
 ## Procedura
 
 Kroki albo tabela metod.
+
+## Jak zweryfikować
+
+Obiektywne warunki poprawnego wyniku.
+
+## Approval
+
+Które działania zewnętrzne wymagają świeżej zgody użytkownika. Usuń, jeśli skill jest read-only.
+
+## Oczekiwane wyjście
+
+Format wyniku.
 
 ## Fallback
 

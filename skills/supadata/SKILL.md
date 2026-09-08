@@ -5,15 +5,11 @@ description: >
   Metadane social, kanały i playlisty YouTube. Transcript, captions, YouTube search.
   NIE do scrapingu WWW/docs/PDF — skill firecrawl (web_* w tym API to zapas, nie default).
   NIE do Reddit — skill reddit. NIE do papers — skill academic.
-type: skill
-pricing: free
-completeness: full
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/supadata/SKILL.md
-  cursor: .cursor/skills/supadata/SKILL.md
+license: MIT
+compatibility: Requires Python 3.10+, requests, internet access, and SUPADATA_API_KEY.
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Supadata API

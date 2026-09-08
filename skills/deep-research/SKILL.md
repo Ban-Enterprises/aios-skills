@@ -7,15 +7,10 @@ description: >
   intelligence gathering, kto jest ekspertem od, co się dzieje w, multi-platform research.
   W tym repo: opis i routing. Pełna orkiestracja poza katalogiem (AIOS Community).
   NIE zastępuje firecrawl/reddit/academic/supadata — wołaj je osobno, gdy stub nie wystarcza.
-type: command
-pricing: premium
-completeness: stub
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/commands/deep-research.md
-  cursor: .cursor/skills/deep-research/SKILL.md
+license: MIT
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Deep Research

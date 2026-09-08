@@ -5,33 +5,18 @@ description: >
   Tworzy SESSION-STATE.md z podsumowaniem co zrobiono, co w trakcie, co dalej.
   Buduje ciągłość między sesjami. End session, zakończ sesję, koniec pracy.
   NIE do odczytu statusu — skill status.
-type: command
-pricing: free
-completeness: full
-verified: true
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/commands/end-session.md
-  cursor: .cursor/skills/end-session/SKILL.md
+license: MIT
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # End Session
 
 > Zakończ sesję pracy i zapisz kontekst dla następnej sesji.
 
-## Instalacja
+## Procedura
 
-- Claude Code: `.claude/commands/end-session.md` — `/end-session`
-- Cursor: `.cursor/skills/end-session/SKILL.md`
-
-Albo `./scripts/install-skills.sh`.
-
----
-
-## Komenda
-
-```markdown
 Zakończ sesję pracy i zapisz kontekst dla następnej sesji. Uruchom na koniec każdej sesji.
 
 ## Protokół końca sesji
@@ -68,7 +53,6 @@ Jeśli nie istnieje — pomiń ten krok. Nie twórz go na siłę.
 Wypisz:
 
 "Sesja zamknięta. Stan zapisany w SESSION-STATE.md. Gotowe do nowej rozmowy."
-```
 
 ---
 

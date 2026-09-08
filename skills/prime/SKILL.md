@@ -5,37 +5,18 @@ description: >
   potwierdza gotowość do pracy. Uruchom na start każdej sesji.
   Prime, start sesji, inicjalizacja, orientacja.
   NIE do szybkiego statusu w trakcie dnia — skill status.
-type: command
-pricing: free
-completeness: full
-verified: true
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/commands/prime.md
-  cursor: .cursor/skills/prime/SKILL.md
+license: MIT
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Prime
 
 > Zainicjalizuj sesję z pełnym kontekstem projektu.
 
-## Instalacja
+## Procedura
 
-Skopiuj ten plik:
-
-- Claude Code: `.claude/commands/prime.md` — wywołuj `/prime`
-- Cursor: `.cursor/skills/prime/SKILL.md` — na start sesji napisz „prime” albo @ skill
-
-Albo: `./scripts/install-skills.sh --host both --target /ścieżka/projektu`
-
-Po instalacji uruchamiaj na start każdej sesji.
-
----
-
-## Komenda
-
-```markdown
 Zainicjalizuj tę sesję z kontekstem projektu. Przeczytaj pliki w tej kolejności:
 
 1. `AGENTS.md` albo `CLAUDE.md` — struktura workspace, komendy, skille (pierwszy który istnieje)
@@ -56,7 +37,6 @@ Po przeczytaniu podaj:
 5. **Gotowość** — potwierdź że jesteś zorientowany i gotowy do pracy
 
 Bądź zwięzły. Chodzi o orientację, nie raport.
-```
 
 ---
 
@@ -73,9 +53,9 @@ Każda sesja z agentem zaczyna się od zera — nie wie co robiliście wcześnie
 
 ## Para idealna
 
-Używaj razem z `/end-session`:
-1. Na koniec sesji: `/end-session` — zapisuje stan
-2. Na start następnej: `/prime` — czyta stan i kontynuuje
+Używaj razem z `end-session`:
+1. Na koniec sesji: `end-session` zapisuje stan.
+2. Na start następnej: `prime` czyta stan i kontynuuje.
 
 ---
 

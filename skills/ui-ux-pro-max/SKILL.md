@@ -8,15 +8,10 @@ description: >
   dostępność, animacje, layout, spacing.
   W tym repo: opis i routing. Pełna baza decyzji poza katalogiem (AIOS Community).
   NIE do produkcji całego frontu — skill frontend-design.
-type: skill
-pricing: premium
-completeness: stub
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/ui-ux-pro-max/SKILL.md
-  cursor: .cursor/skills/ui-ux-pro-max/SKILL.md
+license: MIT
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # UI/UX Pro Max — Design Intelligence
