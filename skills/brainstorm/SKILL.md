@@ -6,15 +6,10 @@ description: >
   Brainstorm, strategia, pomysły, kierunek, eksploracja.
   W tym repo: opis i routing. Pełny 4-etapowy dialog poza katalogiem (AIOS Community).
   NIE do researchu źródeł — skille firecrawl/reddit/academic/supadata.
-type: command
-pricing: premium
-completeness: stub
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/commands/brainstorm.md
-  cursor: .cursor/skills/brainstorm/SKILL.md
+license: MIT
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Brainstorm

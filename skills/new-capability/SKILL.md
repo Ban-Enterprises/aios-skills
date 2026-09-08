@@ -7,15 +7,10 @@ description: >
   podłącz usługę, build capability, service integration, add API.
   W tym repo: zasada anty-marketplace + opis. Pełny generator poza katalogiem (AIOS Community).
   NIE instaluj MCP z marketplace jako substytutu tego skilla.
-type: command
-pricing: premium
-completeness: stub
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/commands/new-capability.md
-  cursor: .cursor/skills/new-capability/SKILL.md
+license: MIT
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # New Capability — Capability Factory

@@ -5,15 +5,11 @@ description: >
   Artykuły naukowe, abstrakty, grafy cytowań, darmowe PDFy zza paywalla.
   Academic research, scientific papers, literature review, citations, scholarly search.
   NIE do news/blogów/docs WWW — skill firecrawl. NIE do transkryptów — skill supadata.
-type: skill
-pricing: free
-completeness: full
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/academic/SKILL.md
-  cursor: .cursor/skills/academic/SKILL.md
+license: MIT
+compatibility: Requires Python 3.10+, requests, python-dotenv, and internet access.
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Academic Paper Search

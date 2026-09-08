@@ -1,10 +1,17 @@
 # AIOS Skills
 
-Gotowe umiejętności dla agentów (Claude Code, Cursor i inne hosty z katalogiem skilli).
+Przenośny katalog zgodny z [Agent Skills](https://agentskills.io/specification).
+Te same skille działają w Claude Code, Cursorze, Codexie i Groku.
 
 Kurowane przez [Cyfrowy Ogarniacz](https://cyfrowyogarniacz.pl).
 
-Kontrakt katalogu: [`docs/skill-contract.md`](docs/skill-contract.md) · routing: [`docs/routing.md`](docs/routing.md) · audyt: [`docs/audit.md`](docs/audit.md)
+Każdy `SKILL.md` używa standardowego frontmatteru. Dane produktu
+(`pricing`, `verified`, `completeness`, warstwa AIOS) są osobno w
+[`catalog.yaml`](catalog.yaml).
+
+Kontrakt: [`docs/skill-contract.md`](docs/skill-contract.md) · routing:
+[`docs/routing.md`](docs/routing.md) · audyt:
+[`docs/audit.md`](docs/audit.md)
 
 ---
 
@@ -35,40 +42,70 @@ Kontrakt katalogu: [`docs/skill-contract.md`](docs/skill-contract.md) · routing
 
 ## Jak zainstalować
 
-### Skrypt (Claude i/lub Cursor)
+### Instalacja przenośna (zalecana)
 
 ```bash
 git clone https://github.com/Ban-Enterprises/aios-skills.git
 cd aios-skills
-./scripts/install-skills.sh --host both --target /ścieżka/twojego-projektu
-# tylko sesja:
-./scripts/install-skills.sh --host cursor --target /ścieżka --only prime,status,end-session
+python3 -m pip install -r requirements.txt
+python3 scripts/install-skills.py \
+  --host portable \
+  --target /ścieżka/twojego-projektu
 ```
 
-- `--host claude` → `.claude/commands/` i `.claude/skills/`
-- `--host cursor` → `.cursor/skills/<nazwa>/SKILL.md`
-- `--host both` → oba
+`portable` zapisuje do `.agents/skills/`. To neutralna warstwa odkrywana przez
+nowoczesne hosty Agent Skills.
+
+Adaptery konkretnego hosta:
+
+```bash
+# Claude + Cursor
+python3 scripts/install-skills.py --host both --target /ścieżka
+
+# jeden host
+python3 scripts/install-skills.py --host claude --target /ścieżka
+python3 scripts/install-skills.py --host cursor --target /ścieżka
+python3 scripts/install-skills.py --host codex --target /ścieżka
+python3 scripts/install-skills.py --host grok --target /ścieżka
+
+# tylko pętla sesji
+python3 scripts/install-skills.py --host portable --target /ścieżka \
+  --only prime,status,end-session
+```
+
+Ścieżki i rozróżnienie command-like/skill żyją w `catalog.yaml`, nie w
+przenośnym `SKILL.md`.
 
 ### Ręcznie
 
-Skopiuj `skills/<nazwa>/` (cały folder, nie sam markdown, jeśli są `scripts/` albo `references/`).
+Skopiuj `skills/<nazwa>/` do `.agents/skills/<nazwa>/` (cały folder, nie sam
+markdown, jeśli są `scripts/` albo `references/`).
 
-Command na Claude: treść do `.claude/commands/<nazwa>.md`. Na Cursorze command też ląduje jako skill.
+Klasyczne slash commands Claude instalator umieszcza w `.claude/commands/`.
+Pozostali klienci dostają je jako zwykłe skille.
 
 ---
 
 ## Jak to działa
 
-Każdy skill to `SKILL.md` z kontraktem w frontmatterze. Agent dobiera plik po `description` (triggery + **NIE do**).
+Każdy skill to folder z `SKILL.md`; opcjonalnie ma `scripts/`, `references/`
+i `assets/`. Agent dobiera plik po `description`, a resztę ładuje progresywnie.
 
-- **Command** — wywołanie z nazwy (`/prime` w Claude Code; w Cursorze ta sama treść jako skill).
-- **Skill** — ładuje się, gdy temat pojawi się w rozmowie.
+Standard wymaga tylko `name` i `description`. AIOS dodaje standardowe pola
+opcjonalne `license`, `compatibility` i `metadata` (`author`, `version`).
+
+`Command` i `Skill` w tabeli powyżej są klasyfikacją katalogu AIOS. Nie są
+niestandardowym top-level frontmatterem.
 
 Walidacja katalogu:
 
 ```bash
+python3 -m pip install -r requirements-dev.txt
 python3 scripts/check-skills.py
 ```
+
+Checker uruchamia oficjalną walidację `skills-ref`, sprawdza `catalog.yaml`,
+spójność README oraz składnię skryptów Python.
 
 ---
 
@@ -76,7 +113,7 @@ python3 scripts/check-skills.py
 
 | Badge | Znaczenie |
 |-------|-----------|
-| **Zweryfikowany** | SOP z tego repo da się wykonać (`verified: true` + `completeness: full`) |
+| **Zweryfikowany** | SOP z tego repo da się wykonać; status w `catalog.yaml` |
 | **Stub** | Opis i routing; pełne ciało poza katalogiem |
 | **AIOS** | Rekomendowany dla AI Operating System |
 | **Darmowy** | MIT, w tym repo |

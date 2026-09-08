@@ -5,15 +5,11 @@ description: >
   data flow, flowcharts, process diagrams, visual maps. Render diagrams to PNG,
   konwencje diagramów, schemat kolorów.
   NIE do plików .excalidraw z analizy repo — skill excalidraw.
-type: skill
-pricing: free
-completeness: full
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/diagram/SKILL.md
-  cursor: .cursor/skills/diagram/SKILL.md
+license: MIT
+compatibility: Requires the D2 CLI; rendering instructions cover macOS, Linux, and Windows.
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # D2 Diagrams

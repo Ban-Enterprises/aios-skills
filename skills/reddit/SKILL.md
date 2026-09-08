@@ -5,15 +5,11 @@ description: >
   Zero API key. Szukaj postów, komentarzy, auto-detect subreddity.
   Reddit threads, Reddit comments, subreddit posts, community discussion.
   NIE do ogólnego WWW — skill firecrawl. NIE do transkryptów — skill supadata.
-type: skill
-pricing: free
-completeness: full
-verified: true
-aios: false
-hosts: claude, cursor
-install:
-  claude: .claude/skills/reddit/SKILL.md
-  cursor: .cursor/skills/reddit/SKILL.md
+license: MIT
+compatibility: Requires Python 3 and network access to Reddit public JSON endpoints.
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Reddit Search & Extraction

@@ -5,22 +5,15 @@ description: >
   Banned words, structural patterns, self-check protocol. Działa automatycznie
   na każdy output tekstowy (proza, maile, strony). Writing style, styl pisania, AI slop, ludzki tekst.
   NIE do kodu, diffów i komunikatów git — nie przepisuj składni pod ten skill.
-type: skill
-pricing: free
-completeness: full
-verified: true
-aios: false
-hosts: claude, cursor
-install:
-  claude: .claude/skills/writing-style/SKILL.md
-  cursor: .cursor/skills/writing-style/SKILL.md
+license: MIT
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Writing Style Enforcement
 
 Ten skill wymusza ludzko brzmiący tekst. Eliminuje typowe wzorce AI — sztuczne słowa, struktury, i formułki które zdradzają że tekst napisała maszyna.
-
-Zainstaluj jako skill hosta (Claude: `.claude/skills/writing-style/SKILL.md`, Cursor: `.cursor/skills/writing-style/SKILL.md`). Ładuje się przy zadaniach prozy.
 
 ## Kiedy nie
 

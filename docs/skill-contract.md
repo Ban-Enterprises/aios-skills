@@ -1,68 +1,85 @@
 # Kontrakt skilla
 
-Skill opisuje **zamiar i kontrakt**. Host (Claude Code, Cursor, Codex) i vendor (CLI, HTTP, MCP) to adaptery.
+AIOS używa dwóch warstw:
 
-Każdy katalog `skills/<id>/` spełnia ten plik zanim trafi do tabeli w README.
+1. `skills/<id>/SKILL.md` — przenośny [Agent Skills standard](https://agentskills.io/specification).
+2. `catalog.yaml` — produkt, lifecycle, klasyfikacja AIOS i adaptery instalacji.
+
+Skill opisuje **zamiar i procedurę**. Host (Claude Code, Cursor, Codex, Grok) i dane handlowe nie należą do jego przenośnego kontraktu.
 
 ## Warstwy
 
-| Warstwa | Żyje w | Zmienia się |
-|---------|--------|-------------|
-| Kontrakt | frontmatter + pierwsze 40 linii SKILL.md | rzadko (major) |
-| Procedura | reszta SKILL.md, `references/` | gdy zmienia się sposób pracy |
-| Adapter | `scripts/`, komendy CLI, MCP | gdy zmienia się vendor albo host |
+| Warstwa | Żyje w | Przykłady |
+|---------|--------|-----------|
+| Przenośny skill | `SKILL.md`, `scripts/`, `references/`, `assets/` | routing, kroki, kod deterministyczny |
+| Katalog AIOS | `catalog.yaml` | pricing, completeness, verified, warstwa AIOS |
+| Adapter hosta | `catalog.yaml: install_targets` + instalator | `.agents`, `.claude`, `.cursor`, `.codex`, `.grok` |
 
-Ciało procedury nie zawiera twardej ścieżki jednego hosta (`.claude/commands/...` tylko w frontmatter `install`).
+## Standardowy frontmatter
 
-## Frontmatter
-
-Wymagane pola — egzekwuje `scripts/check-skills.py`:
+Wymagane są wyłącznie `name` i `description`. AIOS dodaje standardowe pola opcjonalne, gdy mają sens:
 
 ```yaml
 ---
-name: example                 # = nazwa katalogu
-description: >                # router agenta: triggery + NIE do czego
-  ...
-type: skill                   # skill = auto | command = wywołanie z nazwy
-pricing: free                 # free | premium
-completeness: full            # full = SOP w tym repo | stub = opis + routing
-verified: false               # true tylko gdy SOP z tego repo da się wykonać
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/example/SKILL.md
-  cursor: .cursor/skills/example/SKILL.md
+name: example
+description: Co robi i kiedy agent powinien go użyć.
+license: MIT
+compatibility: Requires Python 3.10+ and internet access.
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 ```
 
-Dla `type: command` ścieżka Claude to `.claude/commands/<name>.md`.
+Dozwolone top-level fields:
 
-`description` musi zawierać frazę `NIE do` albo `nie do` — inaczej check padnie. To jedyny sygnał routingu, który agent widzi przed otwarciem pliku.
+- `name`, `description` — wymagane przez standard,
+- `license`, `compatibility`, `metadata` — opcjonalne,
+- `allowed-tools` — eksperymentalne; używaj tylko przy realnym wsparciu hostów.
 
-`completeness: stub` wymaga w description informacji, że pełna procedura jest poza tym repo. Agent nie ma udawać, że ma 7 etapów.
+Nie wkładaj do `SKILL.md`: `type`, `pricing`, `completeness`, `verified`, `aios`, `hosts`, `install`. Te pola są w `catalog.yaml`.
 
-`verified: true` tylko przy `completeness: full`.
+`metadata` jest mapą `string → string`. Nie chowaj w niej złożonego manifestu produktu.
 
 ## Ciało SKILL.md
 
 Kolejność sekcji:
 
-1. Jednozdaniowy cel
-2. **Kiedy nie** — konkretne skille-sąsiedzi, nie ogólniki
-3. Setup / adapter (CLI, env, skrypt)
-4. Procedura albo tabela metod
-5. Fallback przy 401 / 429 / braku narzędzia (albo jawne „brak fallbacku”)
-6. Gotchas (krótko)
+1. Jednozdaniowy cel.
+2. **Kiedy nie** — gdy istnieje sąsiedni, łatwy do pomylenia skill.
+3. Wymagane wejścia i dostęp.
+4. Procedura albo tabela metod.
+5. Jak zweryfikować wynik.
+6. Granice approval dla działań zewnętrznych.
+7. Oczekiwany format wyjścia.
+8. Fallback przy 401 / 429 / braku narzędzia.
 
 Detale endpointów i przykłady idą do `references/`, nie puchnij SKILL.md.
 
-## Typy
+## Progressive disclosure
 
-| type | Zachowanie |
-|------|------------|
-| `skill` | Agent czyta, gdy description zmatchuje intent |
-| `command` | Ta sama treść, plus slash / nazwa (`/prime`). Na Cursorze i tak ląduje jako skill |
+- Startup: host widzi `name` + `description`.
+- Aktywacja: host czyta pełny `SKILL.md` (cel: poniżej 500 linii).
+- Wykonanie: czyta `references/` lub uruchamia `scripts/` dopiero, gdy trzeba.
 
-## Premium
+## Katalog AIOS
 
-Wolno trzymać stub w otwartym katalogu. Nie wolno w description obiecywać kroków, których nie ma w pliku. Szablon form integracji (`new-capability`) może być skrócony; pełny generator może zostać za paywallem.
+`catalog.yaml` jest źródłem prawdy dla:
+
+- `type`: `skill` lub command-like,
+- `pricing`: `free` / `premium`,
+- `completeness`: `full` / `stub`,
+- `verified`,
+- `aios` i `aios_layer`,
+- ścieżek instalacyjnych hostów.
+
+Stub premium może istnieć, ale `description` musi jasno powiedzieć, że pełna procedura jest poza repo. Stub nie może być `verified: true`.
+
+## Walidacja
+
+```bash
+python3 -m pip install -r requirements-dev.txt
+python3 scripts/check-skills.py
+```
+
+Checker używa oficjalnej biblioteki `skills-ref` do walidacji `SKILL.md`, a osobno sprawdza `catalog.yaml`.

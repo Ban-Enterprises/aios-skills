@@ -4,6 +4,11 @@ Stan repo: `main` @ `c4d907c` · 7 września 2026 · 16 skilli.
 
 Cel audytu: routing agenta, lock-in hosta, szczerość kontraktu (pełny SOP vs teaser), konflikty między skillami, odporność na zmianę vendora.
 
+> Status: findings zachowujemy jako zapis stanu sprzed zmian. Implementacja
+> rozdziela teraz standardowy `SKILL.md` od danych produktu w `catalog.yaml`.
+> Własny rozbudowany frontmatter zaproponowany w pierwszej wersji audytu został
+> wycofany po porównaniu z Anthropic, Cursor, Codex, Matt Pocock i Grok Bot.
+
 Skala: **P0** blokuje poprawny routing albo kłamie agentowi · **P1** lock-in / kruchość · **P2** spójność katalogu.
 
 ---
@@ -71,12 +76,17 @@ Anty-trigger w description (to, co agent widzi **zanim** otworzy plik) mają tyl
 
 ## Zakres poprawek po tym audycie
 
-W tym PR, nie więcej:
+Zrealizowane:
 
-1. Kontrakt katalogu (`docs/skill-contract.md`) + macierz routingu + evale zdań hit/miss.
-2. Description i sekcja „Kiedy nie” na skillach z konfliktem; teasery premium oznaczone jako stub.
-3. Dual install (Claude + Cursor) i session pack czyta też `AGENTS.md`.
-4. `scripts/check-skills.py` pilnuje frontmatteru.
-5. Reddit client jako plik, nie wklejanka; docstring Supadata.
+1. Standard Agent Skills (`name`, `description`, standardowe optional fields)
+   walidowany przez `skills-ref`.
+2. Dane AIOS i produktu przeniesione do `catalog.yaml`.
+3. Macierz routingu + evale zdań hit/miss.
+4. Description i sekcja „Kiedy nie” na skillach z konfliktem; teasery premium
+   oznaczone jako stub w katalogu.
+5. Adapter instalacji: portable `.agents/skills` oraz Claude, Cursor, Codex,
+   Grok.
+6. Session pack czyta `AGENTS.md` albo `CLAUDE.md`.
+7. Reddit client jako plik, nie wklejanka; docstring Supadata.
 
 Świadomie poza zakresem: pełne workflow premium, pinowanie Firecrawl CLI, fixture testy HTTP, wypięcie Notion z MCP, Linuxowy installer D2.

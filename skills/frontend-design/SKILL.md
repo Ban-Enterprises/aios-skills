@@ -7,15 +7,10 @@ description: >
   frontend, landing page, dashboard, website, komponent, mockup, prototype.
   W tym repo: opis i routing. Biblioteka 9 przykładów poza katalogiem (AIOS Community).
   NIE do samego doboru palety/fontów bez kodu — skill ui-ux-pro-max.
-type: skill
-pricing: premium
-completeness: stub
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/frontend-design/SKILL.md
-  cursor: .cursor/skills/frontend-design/SKILL.md
+license: MIT
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Frontend Design

@@ -5,15 +5,11 @@ description: >
   z opcjonalnym eksportem do PNG/SVG. Architecture diagrams, system diagrams,
   visualize codebase, generate excalidraw files, export to PNG/SVG.
   NIE do diagramów jako kod D2/PNG — skill diagram.
-type: skill
-pricing: free
-completeness: full
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/skills/excalidraw/SKILL.md
-  cursor: .cursor/skills/excalidraw/SKILL.md
+license: MIT
+compatibility: Creates Excalidraw JSON; optional PNG/SVG export requires Playwright.
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Excalidraw Diagram Generator

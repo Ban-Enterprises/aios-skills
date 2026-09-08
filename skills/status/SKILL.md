@@ -4,33 +4,18 @@ description: >
   Szybki status projektu. Czyta minimum plików, daje maksimum informacji.
   Priorytety, ostatnia sesja, następne kroki. Status, stan projektu, raport.
   NIE do pełnego bootstrapu sesji — skill prime. NIE do zapisu stanu — skill end-session.
-type: command
-pricing: free
-completeness: full
-verified: false
-aios: true
-hosts: claude, cursor
-install:
-  claude: .claude/commands/status.md
-  cursor: .cursor/skills/status/SKILL.md
+license: MIT
+metadata:
+  author: BAN ENTERPRISES
+  version: "1.0.0"
 ---
 
 # Status
 
 > Szybki przegląd stanu projektu. Minimum plików, maksimum informacji.
 
-## Instalacja
+## Procedura
 
-- Claude Code: `.claude/commands/status.md` — `/status`
-- Cursor: `.cursor/skills/status/SKILL.md`
-
-Albo `./scripts/install-skills.sh`.
-
----
-
-## Komenda
-
-```markdown
 Pokaż szybki status projektu. Przeczytaj minimum plików, daj maksimum informacji.
 
 ## Protokół
@@ -55,7 +40,6 @@ NASTĘPNE KROKI:
 
 ### 3. Nie ładuj nic więcej
 Ten raport musi być szybki. Nie czytaj kodu, nie analizuj struktury. Czytaj tylko pliki wymienione powyżej.
-```
 
 ---
 
